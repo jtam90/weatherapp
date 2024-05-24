@@ -22,10 +22,44 @@ body::before {
     background: linear-gradient(135deg, hsl(196, 92%, 61%), #84f9e7);
     margin: 100px auto 0;
     border-radius: 20px;
-    padding: 40px 35px;
+    padding: 20px 10px;
     text-align: center;
+}
+
+.search {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 20px;
+    height: 20px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.icon-button {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50px;
+    cursor: pointer;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    color: #555;
 }
 
 .weather-header {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(14, 84, 146);
+    text-align: center;
+    font-size: 35px;
 }
