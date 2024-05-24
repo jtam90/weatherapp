@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Watch</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-    <img src="/images/background-image.jpg">
-    <div class="weather-app">
-        <div class="weather-header">
-            <h1>Weather Watch</h1>
-            <input type="text" id="location" placeholder="Please enter location">
-            <button id="search-btn">Search</button>
-            </div>
-            <div class="weather-info">
-                <div class="weather-icon">
-                    <div class="weather-details">
-                        <h2 id="town-name"></h2>
-                        <p id="temperature"></p>
-                        <p id="description"></p>
-                    </div>
-                </div>
-            </div>
+
+    <div class="card">
+        <div class="search">
+            <h1 class="weather-header">Weather Watch</h1>
+            <input type="text" placeholder="Please enter location">
+            <button id="searchBtn" class="icon-button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
         </div>
+    
     </div>
     <script src="script.js"></script>
 </body>
