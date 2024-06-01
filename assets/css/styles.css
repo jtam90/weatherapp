@@ -3,6 +3,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    opacity: 0.9;
 }
 
 body::before {
@@ -19,11 +20,17 @@ body::before {
 .card {
     width: 90%;
     max-width: 470px;
-    background: linear-gradient(135deg, hsl(196, 92%, 61%), #84f9e7);
+    background: linear-gradient(135deg, hsl(196, 92%, 61%), #3ed7ac);
     margin: 100px auto 0;
     border-radius: 20px;
-    padding: 20px 10px;
+    padding: 20px 20px;
+    padding-bottom: 50px;
+    padding-top: 50px;
     text-align: center;
+}
+
+.city-card {
+    padding: 20px;
 }
 
 .search {
@@ -57,9 +64,27 @@ body::before {
     color: #555;
 }
 
-.weather-header {
+.temp {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(14, 84, 146);
+    color: #fff;
     text-align: center;
-    font-size: 35px;
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+.city {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.weather-icon {
+    align-content: center;
+    width: 40%;
+}
+
+.location-text {
+    align-items: center;
 }
