@@ -1,6 +1,5 @@
 body {
     background-image: url('/assets/images/background-image.jpg');
-    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     opacity: 0.9;
@@ -18,15 +17,13 @@ body::before {
 }
 
 .card {
-    width: 90%;
-    max-width: 470px;
+    max-width: 350px;
     background: linear-gradient(135deg, hsl(196, 92%, 61%), #3ed7ac);
     margin: 100px auto 0;
     border-radius: 20px;
-    padding: 20px 20px;
-    padding-bottom: 50px;
-    padding-top: 50px;
     text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .city-card {
@@ -69,7 +66,7 @@ body::before {
     color: #fff;
     text-align: center;
     font-size: 40px;
-    padding-bottom: 10px;
+    padding-bottom: 5px; /* Adjusted padding */
 }
 
 .city {
@@ -77,7 +74,7 @@ body::before {
     color: #fff;
     text-align: center;
     font-size: 30px;
-    padding-top: 10px;
+    padding-top: 5px; /* Adjusted padding */
 }
 
 .weather-icon {
@@ -87,29 +84,27 @@ body::before {
 
 
 .location-text {
-    align-items: center;
+    width: 50%;
+    max-width: 400px;
+    padding: 10px 15px;
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #333;
 }
 
-.details {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0 10px;
-    margin-top: 50px;
+.weather {
+    display: none;
 }
 
-.col {
-    display: flex;
-    align-items: center;
-    text-align: left;
-}
-
-.col img {
-    width: 40px;
-    margin-right: 10px;
-}
-
-p {
+.error p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #fff;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
 }
+

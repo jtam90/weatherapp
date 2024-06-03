@@ -4,40 +4,88 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const searchBox = document.querySelector(".location-text");
     const searchBtn = document.getElementById("searchBtn");
-    const weatherIcon = document.getElementById("weather-icon");
+    const weatherIcon = document.querySelector(".weather-icon");
+    const errorElement = document.querySelector(".error p");
+    const weatherQuote = document.querySelector(".quote");
+
+    const weatherQuotes = {
+        "Clouds": "One misty, moisty morning, when cloudy was the weather...",
+        "Fog": "One misty, moisty morning, when cloudy was the weather...",
+        "Mist": "One misty, moisty morning, when cloudy was the weather...",
+        "Haze": "One misty, moisty morning, when cloudy was the weather...",
+        "Rain": "It's raining, it's pouring, the old man is snoring...",
+        "Drizzle": "It's raining, it's pouring, the old man is snoring...",
+        "Snow": "When the North Wind doth blow, we shall have snow...",
+        "Clear": "The sun has got his hat on, hip-hip-hip hooray!",
+        "Thunderstorm": "I hear thunder, I hear thunder... Hark don't you? Hark don't you?",
+        "Wind": "Rock-a-bye baby, in the treetop... When the wind blows, the cradle will rock."
+    };
 
     async function checkWeather(city) {
-        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-        const data = await response.json();
+        try {
+            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 
-        console.log(data);
+            if (!response.ok) {
+                errorElement.style.display = "block";
+                document.querySelector(".weather").style.display = "none";
+                return;
+            }
 
-        document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-    
-        if (data.Weather[0].main == "Cloudy"){
-            weatherIcon.src = "/assets/images/cloudy.png";
-        }
-        else if(data.Weather[0].main == "Foggy"){
-            weatherIcon.src = "/assets/images/foggy.png";
-        }
-        else if(data.Weather[0].main == "Rain"){
-            weatherIcon.src = "/assets/images/rain.png";
-        }
-        else if(data.Weather[0].main == "Snow"){
-            weatherIcon.src = "/assets/images/snow.png";
-        }
-        else if(data.Weather[0].main == "Sunny"){
-            weatherIcon.src = "/assets/images/sunny.png";
-        }
-        else if(data.Weather[0].main == "Stormy"){
-            weatherIcon.src = "/assets/images/stormy.png";
-        }
+            const data = await response.json();
 
-    
+            errorElement.style.display = "none";
+            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+
+            const weatherMain = data.weather[0].main;
+            console.log("Weather condition:", weatherMain);
+
+            if (weatherMain === "Clouds") {
+                weatherIcon.src = "/assets/images/cloudy.png";
+            } else if (weatherMain === "Fog" || weatherMain === "Mist" || weatherMain === "Haze") {
+                weatherIcon.src = "/assets/images/foggy.png";
+            } else if (weatherMain === "Rain" || weatherMain === "Drizzle") {
+                weatherIcon.src = "/assets/images/rain.png";
+            } else if (weatherMain === "Snow") {
+                weatherIcon.src = "/assets/images/snow.png";
+            } else if (weatherMain === "Clear") {
+                weatherIcon.src = "/assets/images/sunny.png";
+            } else if (weatherMain === "Thunderstorm") {
+                weatherIcon.src = "/assets/images/stormy.png";
+            } else if (weatherMain === "Wind") {
+                weatherIcon.src = "/assets/images/windy.png";
+            } else {
+                weatherIcon.src = "/assets/images/default.png";
+            }
+
+            if (weatherQuotes.hasOwnProperty(weatherMain)) {
+                weatherQuote.innerHTML = weatherQuotes[weatherMain];
+            } else {
+                weatherQuote.innerHTML = "There is no such thing as bad weather, only bad clothing.";
+            }
+
+            document.querySelector(".weather").style.display = "block";
+
+        } catch (error) {
+            console.error("Error fetching the weather data:", error);
+            errorElement.style.display = "block";
+            document.querySelector(".weather").style.display = "none";
+        }
     }
 
     searchBtn.addEventListener("click", () => {
-        checkWeather(searchBox.value);
+        const city = searchBox.value.trim(); // Get the trimmed city name
+        if (city) { // Check if the city name is not empty
+            checkWeather(city); // Proceed with fetching weather data
+        }
+    });
+
+    searchBox.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            const city = searchBox.value.trim(); // Get the trimmed city name
+            if (city) { // Check if the city name is not empty
+                checkWeather(city); // Proceed with fetching weather data
+            }
+        }
     });
 });
