@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const weatherQuote = document.querySelector(".quote");
 
     const weatherQuotes = {
-        "Clouds": "One misty, moisty morning, when cloudy was the weather...",
+        "Clouds": "One misty, moisty morning,\nwhen cloudy was the weather...",
         "Fog": "One misty, moisty morning, when cloudy was the weather...",
         "Mist": "One misty, moisty morning, when cloudy was the weather...",
         "Haze": "One misty, moisty morning, when cloudy was the weather...",
