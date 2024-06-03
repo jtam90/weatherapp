@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const searchBox = document.querySelector(".location-text");
     const searchBtn = document.getElementById("searchBtn");
+    const weatherIcon = document.getElementById("weather-icon");
 
     async function checkWeather(city) {
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -13,6 +14,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.querySelector(".city").innerHTML = data.name;
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+    
+        if (data.Weather[0].main == "Cloudy"){
+            weatherIcon.src = "/assets/images/cloudy.png";
+        }
+        else if(data.Weather[0].main == "Foggy"){
+            weatherIcon.src = "/assets/images/foggy.png";
+        }
+        else if(data.Weather[0].main == "Rain"){
+            weatherIcon.src = "/assets/images/rain.png";
+        }
+        else if(data.Weather[0].main == "Snow"){
+            weatherIcon.src = "/assets/images/snow.png";
+        }
+        else if(data.Weather[0].main == "Sunny"){
+            weatherIcon.src = "/assets/images/sunny.png";
+        }
+        else if(data.Weather[0].main == "Stormy"){
+            weatherIcon.src = "/assets/images/stormy.png";
+        }
+
+    
     }
 
     searchBtn.addEventListener("click", () => {
