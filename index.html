@@ -10,40 +10,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-
-    <div class="card">
-        <div class="search">
-
-            <div class="weather">
-                <p class="quote"></p>
-                <img src="/assets/images/sunny.png" class="weather-icon">
-                <div class="city-card">
-                    <h1 class="temp">20°c </h1>
-                    <h2 class="city">London</h2>
+    <div class="wrapper">
+        <div class="container">
+            <div class="card">
+                <div class="search">
+                    <div class="weather">
+                        <p class="quote"></p>
+                        <img src="/assets/images/sunny.png" class="weather-icon">
+                        <div class="city-card">
+                            <h1 class="temp">20°c</h1>
+                            <h2 class="city">London</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Please enter location" class="location-text">
+                    <button id="searchBtn" class="icon-button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="error">
+                    <p>Invalid city name</p>
                 </div>
             </div>
         </div>
-        <input type="text" placeholder="Please enter location" class="location-text">
-        <button id="searchBtn" class="icon-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <div class="error">
-            <p>Invalid city name</p>
-        </div>
     </div>
-
-
-    </div>
-    </div>
-
-    </div>
-
-
     <script src="/assets/js/script.js"></script>
 </body>
 
 </html>
+
+
+
