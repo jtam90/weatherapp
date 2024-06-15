@@ -1,32 +1,33 @@
 body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     background-image: url('/assets/images/background-image.jpg');
+    background-size: cover; /* This makes the background image cover the entire body */
+    background-position: center; /* This centers the background image */
     background-repeat: no-repeat;
-    background-position: center center;
-    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.3);
-    z-index: -1;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
 }
 
 .card {
+    width: 100%;
     max-width: 350px;
     background: linear-gradient(135deg, hsl(196, 92%, 61%), #3ed7ac);
-    margin: 100px auto 0;
     border-radius: 20px;
     text-align: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 20px;
+    padding: 20px;
 }
 
 .city-card {
@@ -34,7 +35,7 @@ body::before {
 }
 
 .search {
-    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
@@ -71,7 +72,7 @@ body::before {
     color: #fff;
     text-align: center;
     font-size: 60px;
-    margin-bottom: 1px; /* Adjusted padding */
+    margin-bottom: 1px;
     margin-top: 2px;
 }
 
@@ -80,7 +81,7 @@ body::before {
     color: #fff;
     text-align: center;
     font-size: 40px;
-    margin-top: 1px; /* Adjusted padding */
+    margin-top: 1px;
 }
 
 .weather-icon {
@@ -88,7 +89,6 @@ body::before {
     margin-top: 10px;
     margin-bottom: 20px;
 }
-
 
 .location-text {
     width: 50%;
@@ -121,8 +121,5 @@ p.quote {
     color:#fff;
     text-align: center;
     margin-top: 30px;
-    
-    }
-    
-
+}
 
