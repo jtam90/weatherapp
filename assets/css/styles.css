@@ -3,8 +3,8 @@ body {
     padding: 0;
     height: 100%;
     background-image: url('/assets/images/background-image.jpg');
-    background-size: cover; /* This makes the background image cover the entire body */
-    background-position: center; /* This centers the background image */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -23,24 +23,50 @@ body {
 
 .card {
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     background: linear-gradient(135deg, hsl(196, 92%, 61%), #3ed7ac);
     border-radius: 20px;
     text-align: center;
     padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.quote {
+    font-family: "Just Another Hand", cursive;
+    font-size: 24px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.weather-icon {
+    width: 100px;
+    margin-top: 20px;
 }
 
 .city-card {
-    padding: 20px;
+    text-align: center;
+}
+
+.city {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.temp {
+    font-size: 36px;
+    margin-top: 5px;
 }
 
 .search {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    margin-top: 20px;
 }
 
-.search input {
+.location-text {
     border: 0;
     outline: 0;
     background: #ebfffc;
@@ -51,8 +77,6 @@ body {
     flex: 1;
     margin-right: 10px;
     font-size: 14px;
-    margin-bottom: 10px;
-    margin-top: 20px;
 }
 
 .icon-button {
@@ -67,59 +91,25 @@ body {
     color: #555;
 }
 
-.temp {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #fff;
-    text-align: center;
-    font-size: 60px;
-    margin-bottom: 1px;
-    margin-top: 2px;
-}
-
-.city {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #fff;
-    text-align: center;
-    font-size: 40px;
-    margin-top: 1px;
-}
-
-.weather-icon {
-    width: 170px;
+.error {
+    display: none;
     margin-top: 10px;
-    margin-bottom: 20px;
 }
 
-.location-text {
-    width: 50%;
-    max-width: 400px;
-    padding: 10px 15px;
+.forecast-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.forecast-card {
+    width: 200px;
+    height: 250px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
     margin: 10px;
-    border: 2px solid #ccc;
-    border-radius: 20px;
-    font-size: 14px;
-    color: #333;
 }
-
-.weather {
-    display: none;
-}
-
-.error p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #fff;
-    text-align: left;
-    margin-left: 10px;
-    font-size: 14px;
-    margin-top: 10px;
-    display: none;
-}
-
-p.quote {
-    font-family: "Just Another Hand", cursive;
-    font-size: 30px;
-    color:#fff;
-    text-align: center;
-    margin-top: 30px;
-}
-

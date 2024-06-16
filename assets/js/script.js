@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function checkWeather(city) {
         try {
-            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+            const response = await fetch(`${apiUrl}${city}&appid=${apiKey}`);
 
             if (!response.ok) {
                 errorElement.style.display = "block";
@@ -89,3 +89,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
+
+
+
+
+
+
